@@ -1,0 +1,153 @@
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header__nav{
+    display: flex;
+    overflow: hidden;
+}
+.header__logo{
+    flex: 1;
+    display: flex;
+    position: relative;
+    padding: 20px;
+}
+.header__logo-overlay{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    z-index: -1;
+}
+.header__logo img {
+    padding-left: 30px;
+}
+.header__menu, .header__menu-mobile{
+    display: flex;
+    flex: 1.5;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    padding: 20px;
+    list-style: none;
+    background-color: var(--background-color);
+}
+.header__menu li{
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+    color: var(--other-black);
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    cursor: pointer;
+}
+.header__menu li:hover{
+    color: var(--terciary-color);
+}
+
+.header__menu-mobile{
+    display: none;
+    gap: 20px;
+    position: relative;
+}
+
+.header__menu li img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* --------- HEADER RESPONSIVE MÓVIL (logo centrado y más grande) --------- */
+@media (max-width: 768px) {
+
+  .header__nav {
+    position: relative;
+    height: 70px; /* mantiene altura cómoda */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* base centrada */
+    background-color: var(--background-color);
+  }
+
+  /* LOGO CENTRADO MEDIANTE ABSOLUTE */
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* centrado real */
+    padding: 0;
+    margin: 0;
+  }
+
+  .header__logo img {
+    padding-left: 0;
+    width: 300px;  
+    max-width: 80%;
+  }
+
+  /* Ocultar menú grande */
+  .header__menu {
+    display: none;
+  }
+
+  /* Menú móvil sigue a la derecha */
+  .header__menu-mobile {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+  }
+
+  .header__menu-mobile img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ---------- MENÚ MÓVIL DESPLEGABLE ---------- */
+.mobile-dropdown {
+  position: absolute;
+  top: 70px; /* debajo del header */
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+  gap: 1.2rem;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mobile-dropdown a {
+  font-family: var(--plus-jakarta-sans);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--other-black);
+}
+
+.mobile-dropdown a:hover {
+  color: var(--terciary-color);
+}
+
+/* Cuando está abierto */
+.mobile-dropdown.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Mostrar solo en móvil */
+@media (min-width: 769px) {
+  .mobile-dropdown {
+    display: none !important;
+  }
+}
+

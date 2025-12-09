@@ -1,0 +1,194 @@
+
+.new-music{
+  min-height: calc(100vh - 74px);
+  padding: 1rem 3rem; 
+}
+
+.new-music__container {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    gap: 20px;              
+    align-items: center;      
+    padding: 40px;           
+    box-sizing: border-box;
+    border-radius: 2rem;
+    background-color: #f9f5f7; 
+    background-color: #81b1a9;
+      background-image: 
+          radial-gradient(at 47% 33%, hsl(0.00, 100%, 68%) 0, transparent 59%), 
+          radial-gradient(at 82% 65%, hsl(260.66, 100%, 76%) 0, transparent 55%);
+  }
+  
+  /* Cada columna ocupa un lugar en el grid */
+  .new-music .col {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  /* Estilos de la primera columna (texto)  */
+  .col-text {
+      display: flex;
+      flex-direction: column;
+      
+      backdrop-filter: blur(16px) saturate(75%);
+      -webkit-backdrop-filter: blur(16px) saturate(75%);
+      background-color: rgba(255, 255, 255, 0.53);
+      border-radius: 12px;
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      box-sizing: border-box;
+      padding: 1rem 2rem; 
+  }
+  
+  .col-text h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--terciary-color);
+    font-family: var(--dyna-puff);
+    line-height: 1.15;
+    align-self: center;
+  }
+  
+  .col-text p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+
+    color: var(--black-400);
+
+    font-size: 1.05rem;
+    font-family: var(--roboto);
+  }
+  
+
+  /* Segunda columna: tres imágenes de distinto tamaño */
+
+  /* flex-column para apilar las fotos */
+  .col-photos-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+  }
+  
+  /* Clase común para todas las imágenes */
+  .col-photos-3 .photo {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .photo-large {
+    height: 300px;
+  }
+  
+  .photo-medium {
+    height: 180px;
+  }
+  
+  .photo-small {
+    height: 120px;
+  } 
+
+  /* Tercera columna: dos imágenes de distinto tamaño */
+
+  .col-photos-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .col-photos-2 .photo {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  /* Usamos las mismas clases .photo-large y .photo-medium */
+  .col-photos-2 .photo-large {
+    height: 275px;
+  }
+  
+  .col-photos-2 .photo-medium {
+    height: 150px;
+  }
+ 
+
+  /* --------------------  RESPONSIVE MÓVIL NEW-MUSIC  -------------------- */
+@media (max-width: 768px) {
+
+  .new-music {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .new-music__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  /* ----------- TEXTO ----------- */
+  .col-text {
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .col-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .col-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ----------- FOTOS: COLUMNA 3 IMÁGENES ----------- */
+  .col-photos-3 {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* ----------- FOTOS: COLUMNA 2 IMÁGENES ----------- */
+  .col-photos-2 {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* Alturas más pequeñas para móvil */
+  .photo-large {
+    height: 180px;
+  }
+
+  .photo-medium {
+    height: 130px;
+  }
+
+  .photo-small {
+    height: 100px;
+  }
+}
+
+/* Pantallas muy pequeñas  */
+@media (max-width: 480px) {
+
+  .col-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .photo-large {
+    height: 150px;
+  }
+
+  .photo-medium {
+    height: 110px;
+  }
+
+  .photo-small {
+    height: 90px;
+  }
+}

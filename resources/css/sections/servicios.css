@@ -1,0 +1,58 @@
+.servicios {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: calc(100vh - 74px);
+}
+
+.servicios__festivales,
+.servicios__london {
+  flex: 1;
+  /*background-color: #f9f9f9;*/
+  padding: 1.5rem;
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
+  /*box-shadow: 0 0 20px var(--terciary-color);*/
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicios__festivales > div,
+.servicios__london > div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+
+.servicios__festivales img,
+.servicios__london img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.servicios__festivales h2,
+.servicios__london h2{
+  font-size: 2rem;
+  color: var(--terciary-color);
+  font-family: var(--dyna-puff);
+}
+.servicios__festivales p,
+.servicios__london p {
+  margin: 0.5rem 0;
+  font-family: var(--roboto);
+}
+
+
+
+@media (max-width: 768px) {
+  .servicios {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

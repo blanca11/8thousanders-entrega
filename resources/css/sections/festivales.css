@@ -1,0 +1,330 @@
+.festivales {
+    min-height: calc(100vh - 74px);
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.festivales__texto{
+    margin: 0;                 
+}
+
+.festivales__texto h2{
+    display: grid;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-family: var(--dyna-puff);
+    font-size: 3.5rem;
+    letter-spacing: -.1em;
+    font-weight: 600;
+
+    align-items: start;   
+    margin: 0;
+    padding: 0;
+}
+
+.festivales__texto p{
+    text-align: left;
+    color: var(--black-400);
+
+    font-size: 1.1rem;
+    font-family: var(--roboto);
+
+    line-height: 1.75rem;
+
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 1rem;
+}
+
+.festivales__titulo{
+    flex: 0.5;
+}
+
+.festivales__col1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    gap: 3rem;
+}
+
+.festivales__col2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    gap: 1rem;
+}
+
+.texto__col1 p{
+    padding: 0px 70px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+.texto__col2 p{
+    padding: 0px 0px 0px 0px;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-left: -50px;
+}
+
+.radar{
+    display: flex;
+    justify-content: center;
+}
+
+.link-container{
+    display: inline-block !important;
+    position: relative !important;
+}
+
+/* Main dotted link style */
+.dotted-link {
+    color: #2c3e50;
+    text-decoration: none;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+    display: inline-block !important;
+    position: relative !important;
+}
+
+.dotted-link:hover {
+    color: var(--terciary-color);
+}
+
+/* Container for the dots */
+.dots-container {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;  /* This will now be 100% of the link width only */
+    height: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none; /* Prevent dots from interfering with clicks */
+    z-index: 1;
+}
+
+/* Individual dots */
+.dot {
+    width: 7px;
+    height: 7px;
+    background-color: var(--terciary-color);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Hover state - dots change color and start bouncing */
+.dotted-link:hover .dot {
+    animation: bounce 0.6s infinite ease-in-out;
+    
+}
+
+/* Stagger the animation delays */
+.dotted-link:hover .dot:nth-child(1) { animation-delay: 0s; }
+.dotted-link:hover .dot:nth-child(2) { animation-delay: 0.1s; }
+.dotted-link:hover .dot:nth-child(3) { animation-delay: 0.2s; }
+.dotted-link:hover .dot:nth-child(4) { animation-delay: 0.3s; }
+.dotted-link:hover .dot:nth-child(5) { animation-delay: 0.4s; }
+.dotted-link:hover .dot:nth-child(6) { animation-delay: 0.5s; }
+.dotted-link:hover .dot:nth-child(7) { animation-delay: 0.6s; }
+.dotted-link:hover .dot:nth-child(8) { animation-delay: 0.7s; }
+.dotted-link:hover .dot:nth-child(9) { animation-delay: 0.8s; }
+.dotted-link:hover .dot:nth-child(10) { animation-delay: 0.9s; }
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+
+.mapas {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem 1rem;
+    flex-wrap: wrap; /* permite que baje si no cabe */
+    /*border: #111 1px solid;*/
+    margin-top: -20px;
+}
+
+.map-container {
+    position: relative; /* para las ubicaciones de los festivales */
+    
+    width: 100%;
+    /*border: #111 1px solid;*/
+    display: flex;
+}
+
+.usmap {
+    max-width: 550px;
+}
+
+.eumap{
+    max-width: 450px;
+}
+  
+.mapa {
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+.icono {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.icono:hover {
+    z-index: 999;
+}
+
+.icono img {
+    width: auto;
+    height: 30px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background-color);
+    color: black;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    z-index: 10;
+    border: black 3px solid;
+}
+
+.tooltip img{
+    height: 100px;
+    width: auto;
+    border-radius: 10px;
+    align-self: center;
+}
+
+/* Hover solo en escritorio */
+@media (hover: hover) {
+    .icono:hover .tooltip {
+      display: flex;
+      flex-direction: column;
+      z-index: 999;
+    }
+}
+
+@media (max-width: 768px) {
+    .mapas {
+      flex-direction: column;
+      align-items: center;
+    }
+}
+
+/* --------------------  RESPONSIVE MÓVIL  -------------------- */
+@media (max-width: 768px) {
+
+  .festivales {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* Título vertical --> horizontal en móvil */
+  .festivales__texto h2 {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Columnas una debajo de otra */
+  .festivales__col1,
+  .festivales__col2 {
+    flex: none;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  /* Textos centrados + padding reducido */
+  .festivales__texto p {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .texto__col1 p,
+  .texto__col2 p {
+    padding: 0 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Mapas centrados y ajustados */
+  .map-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .usmap,
+  .eumap {
+    max-width: 100%;
+  }
+
+  /* Iconos dentro del mapa más pequeños */
+  .icono img {
+    height: 22px;
+  }
+
+  /* Tooltips: más pequeños y centrados */
+  .tooltip {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    top: -30px;
+  }
+
+  .tooltip img {
+    height: 70px;
+  }
+
+  /* Radar centrado */
+  .radar {
+    justify-content: center;
+  }
+
+  /* Evita desbordes del enlace animado */
+  .link-container {
+    display: block;
+    text-align: center;
+  }
+
+  /* Asegura que los dots no rompan el diseño */
+  .dots-container {
+    width: 100%;
+  }
+}

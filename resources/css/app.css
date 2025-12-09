@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("sections/header.css");
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/subscribe.css");
+@import url("sections/new-music.css");
+@import url("sections/servicios.css");
+@import url("sections/festivales.css");
+@import url("sections/footer.css");
+@import url("sections/Festival+London.css");
+@import url("sections/contacto.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --playfair-display: "Playfair Display", serif;
+  --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+  --dyna-puff: "DynaPuff", system-ui;
+  --roboto: "Roboto", sans-serif;
+
+  --primary-color: #AF85FF;
+  --secondary-color: #81B1A9;
+  --terciary-color: #FF5C5C;
+  --background-color: #F8F6EA;
+
+  --lighter-green: #b9d6d0;
+  --lighter-purple: #e0d4ff;
+  --even-lighter-purple: #eee8ff;
+
+  --rich-black: #011627;
+  --lavender-blush: #F7EDF0;
+
+  --other-black: #121212;
+  --black-200: #020202;
+  --black-300: #333333;
+  --black-400: #1f1e31;
+  --black-500: #555555;
+  --gray-100: #888888;
+
+  --color-white: #fff;
+  --color-creamson: #fff0de;
+
+  /* Derivados */
+  --text-dark: #2a2a2a;
+  --text-muted: #666;
+  --card-bg: #ffffff;
+  --shadow-soft: 0 8px 24px rgba(0,0,0,.08);
+  --section-bg: rgba(255,255,255,.6);
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*can put the titles parameters here*/
+.all__title {
+  font-size: 64px;
+  font-weight: 600;
+  font-family: var(--playfair-display);
+
+  color: var(--secondary-color);
+
+  margin-top: 16px;
+}
+/*can put the paragraph paramenters here*/
+.all__paragraphs {
+  text-align: left;
+    color: var(--black-400);
+
+    font-size: 1.2rem;
+    font-family: var(--plus-jakarta-sans);
+
+    line-height: 1.75rem;
+
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 1rem;
+}
+
